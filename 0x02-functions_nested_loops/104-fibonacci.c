@@ -1,26 +1,25 @@
 #include <stdio.h>
 
+int fibonacci(int n);
 
-/**
- * numLength - returns the lenth of string
- * @num : operand number
- * Return: number of digits
- */
+int main() {
+    int i;
+    for (i = 1; i <= 98; i++) {
+        printf("%d", fibonacci(i));
+        if (i < 98) {
+            printf(", ");
+        }
+    }
+    printf("\n");
+    return 0;
+}
 
-int numLength(int num)
-{
-	int length = 0;
-
-	if (!num)
-	{
-		return (1);
-	}
-
-	while (num)
-	{
-		num = num / 10;
-		length += 1;
-	}
-
-	return (length);
+int fibonacci(int n) {
+    if (n == 1) {
+        return 1;
+    } else if (n == 2) {
+        return 2;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
 }
