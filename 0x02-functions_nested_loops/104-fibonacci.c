@@ -1,25 +1,28 @@
 #include <stdio.h>
 
-int fibonacci(int n);
+/**
+ * main - Entry point
+ *
+ * Description: Prints the first 98 Fibonacci numbers
+ * starting with 1 and 2, separated by comma and space.
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n = 98; /* Number of Fibonacci numbers to print */
+	int first = 1, second = 2;
 
-int main() {
-    int i;
-    for (i = 1; i <= 98; i++) {
-        printf("%d", fibonacci(i));
-        if (i < 98) {
-            printf(", ");
-        }
-    }
-    printf("\n");
-    return 0;
-}
+	printf("%d, %d", first, second);
 
-int fibonacci(int n) {
-    if (n == 1) {
-        return 1;
-    } else if (n == 2) {
-        return 2;
-    } else {
-        return fibonacci(n - 1) + fibonacci(n - 2);
-    }
+	for (int i = 3; i <= n; i++)
+	{
+		int next = first + second;
+		printf(", %d", next);
+		first = second;
+		second = next;
+	}
+
+	printf("\n");
+	return (0);
 }
