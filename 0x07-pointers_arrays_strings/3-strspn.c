@@ -1,5 +1,3 @@
-3-Strspn.c
-
 #include "main.h"
 /**
  * _strspn - Entry point
